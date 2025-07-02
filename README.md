@@ -17,8 +17,6 @@ Compra fichas, fusiónalas y hazlas digievolucionar mientras luchas automáticam
 
 ## 📸 Capturas de pantalla
 
-> *(Agrega aquí tus imágenes cuando las tengas en la carpeta `/screenshots/` o enlaza desde Imgur o GitHub)*
-
 ![image](https://github.com/user-attachments/assets/b688e728-7200-4c6d-9c16-305460bbc040)
 
 ![image](https://github.com/user-attachments/assets/afc5f1ea-f3e1-4c7a-a7e7-94aecf8cdae0)
