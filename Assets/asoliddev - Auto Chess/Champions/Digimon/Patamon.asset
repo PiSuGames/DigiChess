@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b77e70f5edd844bfbf722ca138255, type: 3}
+  m_Name: Patamon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7335760998143173694, guid: 85aa1dedcb6529049b33cdad96eaa020, type: 3}
+  attackProjectile: {fileID: 2047516437370248868, guid: e6736dc1205bf254dbdaa1d89efce89b,
+    type: 3}
+  uiname: Patamon
+  cost: 3
+  img: {fileID: 21300000, guid: 3ccb86c058255db4796ba512fae8d109, type: 3}
+  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
+  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
+  health: 850
+  damage: 150
+  attackRange: 8
+  tier: 3

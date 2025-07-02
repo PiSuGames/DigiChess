@@ -1,0 +1,37 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Unity generated files
+sysinfo.txt
+*.stacktrace
+
+# Visual Studio
+.vscode/
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Auto-generated
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# Rider
+.idea/
+*.sln.iml

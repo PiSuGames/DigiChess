@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b77e70f5edd844bfbf722ca138255, type: 3}
+  m_Name: Veemon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8630654999615776707, guid: cc96a039d6cc2a54c916278f3c558689, type: 3}
+  attackProjectile: {fileID: 0}
+  uiname: Veemon
+  cost: 3
+  img: {fileID: 21300000, guid: 0798fa9e472752140ab7903bf92af045, type: 3}
+  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
+  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
+  health: 1000
+  damage: 150
+  attackRange: 4
+  tier: 5

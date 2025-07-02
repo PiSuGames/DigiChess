@@ -1,0 +1,4 @@
+repository "DigiChess@jesusburrueco@cloud"
+  path "/"
+    br "/main"
+    co "/main"
