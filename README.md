@@ -48,7 +48,7 @@ Compra fichas, fusiónalas y hazlas digievolucionar mientras luchas automáticam
 
 git clone https://github.com/tuusuario/DigiChess.git
 
-🚧 Estado del proyecto
+## 🚧 Estado del proyecto
 Actualmente en desarrollo. Próximas mejoras:
 
 Nuevos Digimon y evoluciones
@@ -57,7 +57,7 @@ Mejoras gráficas y de interfaz
 
 Publicación en itch.io (solo para uso no comercial)
 
-🛑 Aviso legal
+## 🛑 Aviso legal
 Este proyecto es solo para fines educativos y de portfolio.
 Digimon es una marca registrada de Bandai, Toei Animation y otros licenciatarios.
 Este juego no tiene fines comerciales ni pretende infringir derechos de autor.
