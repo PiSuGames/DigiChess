@@ -18,9 +18,9 @@ MonoBehaviour:
   uiname: Gomamon
   cost: 3
   img: {fileID: 21300000, guid: 185a15197fcfdd14abb4ab6e7a942a62, type: 3}
-  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
+  type1: {fileID: 11400000, guid: 200e54a10084f3941a1f2a3354741fb1, type: 2}
+  type2: {fileID: 11400000, guid: e3a276eaf241a8e4cb2c32acc027a7f2, type: 2}
   health: 900
-  damage: 130
-  attackRange: 8
+  damage: 65
+  attackRange: 6
   tier: 2

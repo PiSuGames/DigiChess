@@ -14,7 +14,6 @@ public class ChampionType : ScriptableObject
     ///Displayed sprite on the UI
     public Sprite icon;
 
-    ///Bonuses this ChampionType has
-    public ChampionBonus championBonus;
-
+    ///Bonuses this ChampionType has (MULTINIVEL)
+    public List<ChampionBonus> championBonuses = new List<ChampionBonus>();
 }

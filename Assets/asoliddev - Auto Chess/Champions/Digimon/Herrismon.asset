@@ -17,9 +17,9 @@ MonoBehaviour:
   uiname: Herrismon
   cost: 3
   img: {fileID: 21300000, guid: 87fa64ef6d075594399faf88309a8c6c, type: 3}
-  type1: {fileID: 11400000, guid: 1915f27a23cbfea43874f483766cfffb, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 1250
-  damage: 140
+  type1: {fileID: 11400000, guid: 081df077a12ebc242a521196e05a6e49, type: 2}
+  type2: {fileID: 11400000, guid: 8c434eb23a703c743a4a1be22993672d, type: 2}
+  health: 950
+  damage: 75
   attackRange: 4
   tier: 2

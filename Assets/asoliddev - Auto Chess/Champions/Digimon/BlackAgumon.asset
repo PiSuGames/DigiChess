@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b77e70f5edd844bfbf722ca138255, type: 3}
+  m_Name: BlackAgumon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7694065919687656627, guid: df9f870f07d2ae44c9d1a0ad4f614bba, type: 3}
+  attackProjectile: {fileID: 0}
+  uiname: BlackAgumon
+  cost: 5
+  img: {fileID: 0}
+  type1: {fileID: 11400000, guid: 8885fc65df39ef44fa3990e269e29f54, type: 2}
+  type2: {fileID: 11400000, guid: 4a64b728791da2f4998f7bf116c4c6e1, type: 2}
+  health: 1250
+  damage: 105
+  attackRange: 4
+  tier: 4

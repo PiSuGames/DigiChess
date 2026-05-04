@@ -15,11 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 7344935845212841428, guid: c6abc1c61a7a37f47b14358420c72523, type: 3}
   attackProjectile: {fileID: 0}
   uiname: Guilmon
-  cost: 3
+  cost: 4
   img: {fileID: 21300000, guid: 537d8a117a7b3cb43a7ebbd1be4994f5, type: 3}
-  type1: {fileID: 11400000, guid: b2d94e95ad754ad46af7ed520c060d74, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 900
-  damage: 180
+  type1: {fileID: 11400000, guid: 4085aed8b6f8e8242b324ffd22f4f69b, type: 2}
+  type2: {fileID: 11400000, guid: 492f459332373ad41a0ce52d978d0bb8, type: 2}
+  health: 1100
+  damage: 85
   attackRange: 4
-  tier: 2
+  tier: 3

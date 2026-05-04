@@ -18,9 +18,9 @@ MonoBehaviour:
   uiname: Patamon
   cost: 3
   img: {fileID: 21300000, guid: 3ccb86c058255db4796ba512fae8d109, type: 3}
-  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
+  type1: {fileID: 11400000, guid: 68ec986c4861a084ab440e4f74dc80f3, type: 2}
+  type2: {fileID: 11400000, guid: 60cf05b1bd83bbb4c94ba7bb79a8eb85, type: 2}
   health: 850
-  damage: 150
-  attackRange: 8
-  tier: 3
+  damage: 70
+  attackRange: 6
+  tier: 2

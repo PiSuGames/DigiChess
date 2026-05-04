@@ -16,10 +16,11 @@ MonoBehaviour:
   attackProjectile: {fileID: 1597069992993035993, guid: 85891e03d6c87514a98a053eaf190895,
     type: 3}
   uiname: Candlemon
-  cost: 3
+  cost: 2
   img: {fileID: 21300000, guid: 19313dfec89d9064c8049c0778f045c1, type: 3}
-  type1: {fileID: 11400000, guid: 1915f27a23cbfea43874f483766cfffb, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 1000
-  damage: 100
-  attackRange: 10
+  type1: {fileID: 11400000, guid: 8885fc65df39ef44fa3990e269e29f54, type: 2}
+  type2: {fileID: 11400000, guid: d085a1949302c0a49be00da5ac2d034b, type: 2}
+  health: 700
+  damage: 55
+  attackRange: 6
+  tier: 1

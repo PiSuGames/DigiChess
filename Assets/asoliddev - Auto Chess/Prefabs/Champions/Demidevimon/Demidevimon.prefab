@@ -66,6 +66,13 @@ MonoBehaviour:
   lvl: 1
   isAttacking: 0
   isDead: 0
+  bonusAttackSpeed: 0
+  bonusLifeSteal: 0
+  bonusCritChance: 0
+  bonusCritMultiplier: 1.5
+  bonusManaGain: 0
+  bonusRegen: 0
+  bonusReflect: 0
 --- !u!114 &-1215716879831616245
 MonoBehaviour:
   m_ObjectHideFlags: 0

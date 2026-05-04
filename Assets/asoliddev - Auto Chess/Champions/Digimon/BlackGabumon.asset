@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b77e70f5edd844bfbf722ca138255, type: 3}
+  m_Name: BlackGabumon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8687533809271181728, guid: d1aed6b58a3829e4a90266ffc8c4046c, type: 3}
+  attackProjectile: {fileID: 0}
+  uiname: BlackGabumon
+  cost: 5
+  img: {fileID: 0}
+  type1: {fileID: 11400000, guid: 081df077a12ebc242a521196e05a6e49, type: 2}
+  type2: {fileID: 11400000, guid: 4a64b728791da2f4998f7bf116c4c6e1, type: 2}
+  health: 1150
+  damage: 95
+  attackRange: 6
+  tier: 4

@@ -17,9 +17,9 @@ MonoBehaviour:
   uiname: Flamemon
   cost: 3
   img: {fileID: 21300000, guid: 27518d064eaf4c94096256a6930d7716, type: 3}
-  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 1500
-  damage: 120
+  type1: {fileID: 11400000, guid: 8885fc65df39ef44fa3990e269e29f54, type: 2}
+  type2: {fileID: 11400000, guid: d085a1949302c0a49be00da5ac2d034b, type: 2}
+  health: 880
+  damage: 70
   attackRange: 4
   tier: 2

@@ -9,7 +9,7 @@ public class Map : MonoBehaviour
     public static int GRIDTYPE_OPONENT_INVENTORY = 1;
     public static int GRIDTYPE_HEXA_MAP = 2;
 
-    public static int hexMapSizeX = 7;
+    public static int hexMapSizeX = 5;
     public static int hexMapSizeZ = 8;
     public static int inventorySize = 9;
 
@@ -207,8 +207,11 @@ public class Map : MonoBehaviour
 
         }
         */
-     
+
         //iterate map grid position
+
+        Vector3 offset = new Vector3(-2f, 0f, 0f);
+
         for (int x = 0; x < hexMapSizeX; x++)
         {
             for (int z = 0; z < hexMapSizeZ /2; z++)
@@ -217,7 +220,7 @@ public class Map : MonoBehaviour
                 GameObject indicatorGO = Instantiate(hexaIndicator);
 
                 //set indicator gameobject position
-                indicatorGO.transform.position = mapGridPositions[x,z];
+                indicatorGO.transform.position = mapGridPositions[x, z] + offset;
 
                 //set indicator parent
                 indicatorGO.transform.parent = indicatorContainer.transform;
@@ -232,7 +235,7 @@ public class Map : MonoBehaviour
                 trigger.transform.parent = triggerContainer.transform;
 
                 //set trigger gameobject position
-                trigger.transform.position = mapGridPositions[x, z];
+                trigger.transform.position = mapGridPositions[x, z] + offset;
 
                 //store triggerinfo
                 mapGridTriggerArray[x, z] = trigger.GetComponent<TriggerInfo>();

@@ -15,10 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 8687533809271181728, guid: 2f05a2be6faadf24d803de6cf3ff05f6, type: 3}
   attackProjectile: {fileID: 0}
   uiname: Dorumon
-  cost: 3
+  cost: 4
   img: {fileID: 21300000, guid: b28a8008bc3e3d84e93e04c9fc3a623d, type: 3}
-  type1: {fileID: 11400000, guid: 1915f27a23cbfea43874f483766cfffb, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 1000
-  damage: 150
+  type1: {fileID: 11400000, guid: 4085aed8b6f8e8242b324ffd22f4f69b, type: 2}
+  type2: {fileID: 11400000, guid: 8c434eb23a703c743a4a1be22993672d, type: 2}
+  health: 1050
+  damage: 85
   attackRange: 4
+  tier: 3

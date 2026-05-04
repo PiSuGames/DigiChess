@@ -16,10 +16,11 @@ MonoBehaviour:
   attackProjectile: {fileID: 1597069992993035993, guid: 85891e03d6c87514a98a053eaf190895,
     type: 3}
   uiname: Agumon
-  cost: 3
+  cost: 2
   img: {fileID: 21300000, guid: be5d54d12646c1843ab4e0bee2401753, type: 3}
-  type1: {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 1000
-  damage: 100
-  attackRange: 10
+  type1: {fileID: 11400000, guid: 4085aed8b6f8e8242b324ffd22f4f69b, type: 2}
+  type2: {fileID: 11400000, guid: 8c434eb23a703c743a4a1be22993672d, type: 2}
+  health: 750
+  damage: 60
+  attackRange: 4
+  tier: 1

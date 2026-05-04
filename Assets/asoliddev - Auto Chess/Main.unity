@@ -474,7 +474,7 @@ MonoBehaviour:
   baseGoldIncome: 5
   currentChampionLimit: 3
   currentChampionCount: 0
-  currentGold: 5
+  currentGold: 100
   currentHP: 100
   timerDisplay: 0
   activeBonusList: []
@@ -582,22 +582,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   championsArray:
   - {fileID: 11400000, guid: 8ab1061ad23b90d4a9edacc5ef342658, type: 2}
+  - {fileID: 11400000, guid: ae8683f1e44336342ab87220b934c3c9, type: 2}
+  - {fileID: 11400000, guid: bbe9fe8290c4a0e4184c18ae739dba06, type: 2}
   - {fileID: 11400000, guid: cfca4de876f0b734692e9f9b489f2e67, type: 2}
   - {fileID: 11400000, guid: 54b50949e9f00eb4a89b29a5a4840757, type: 2}
   - {fileID: 11400000, guid: b19bc54c34d47154c9290d2a05eb9c16, type: 2}
   - {fileID: 11400000, guid: ed69e8b28c2e2eb4d8c1cf54af0d9c86, type: 2}
+  - {fileID: 11400000, guid: 106abe42345eae14d91caa4bdcda9392, type: 2}
   - {fileID: 11400000, guid: 6d94bfb8a5918614fa66ce39c9554dbc, type: 2}
+  - {fileID: 11400000, guid: d5278ab85024c1244b40f62a5c216d45, type: 2}
   - {fileID: 11400000, guid: ca5e754c220ef4849bc2ce6534f70354, type: 2}
   - {fileID: 11400000, guid: 03af18ca037739948b9f11bef4520607, type: 2}
+  - {fileID: 11400000, guid: 461855c7ece46ba4f881e647411d0f36, type: 2}
   - {fileID: 11400000, guid: c801fb562bcf4e14fbb4d5ffb89c1898, type: 2}
   - {fileID: 11400000, guid: b38addd80654af543be7e3d21937abbd, type: 2}
+  - {fileID: 11400000, guid: d5fee1e824e356d49aca12ac76839663, type: 2}
   - {fileID: 11400000, guid: 02549c8fe3ee60f45b352024499bd5fc, type: 2}
   - {fileID: 11400000, guid: fb0633cbbcdce2946977e52421b14ed9, type: 2}
   - {fileID: 11400000, guid: ff30e1d3922859045a08a4adaa9f47ea, type: 2}
+  - {fileID: 11400000, guid: f2ac19315e8f5b04098237356c3da078, type: 2}
   championTypesArray:
-  - {fileID: 11400000, guid: 1915f27a23cbfea43874f483766cfffb, type: 2}
-  - {fileID: 11400000, guid: 92807242142ad854bbd6e794e68ddc92, type: 2}
-  - {fileID: 11400000, guid: b2d94e95ad754ad46af7ed520c060d74, type: 2}
+  - {fileID: 11400000, guid: 081df077a12ebc242a521196e05a6e49, type: 2}
+  - {fileID: 11400000, guid: 492f459332373ad41a0ce52d978d0bb8, type: 2}
+  - {fileID: 11400000, guid: 4dbb2f6a984caca41b999d5cb9b3c099, type: 2}
+  - {fileID: 11400000, guid: 4085aed8b6f8e8242b324ffd22f4f69b, type: 2}
+  - {fileID: 11400000, guid: 8885fc65df39ef44fa3990e269e29f54, type: 2}
+  - {fileID: 11400000, guid: e3a276eaf241a8e4cb2c32acc027a7f2, type: 2}
+  - {fileID: 11400000, guid: 68ec986c4861a084ab440e4f74dc80f3, type: 2}
+  - {fileID: 11400000, guid: 1ea75ac1cc080da41a544def83ec5cbc, type: 2}
+  - {fileID: 11400000, guid: f9f402fc8e0806843aae95e71bedda67, type: 2}
+  - {fileID: 11400000, guid: 4a64b728791da2f4998f7bf116c4c6e1, type: 2}
+  - {fileID: 11400000, guid: 60cf05b1bd83bbb4c94ba7bb79a8eb85, type: 2}
+  - {fileID: 11400000, guid: d085a1949302c0a49be00da5ac2d034b, type: 2}
+  - {fileID: 11400000, guid: 8c434eb23a703c743a4a1be22993672d, type: 2}
 --- !u!114 &27158429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.2, y: -48.2}
+  m_AnchoredPosition: {x: 44.19995, y: -48.200012}
   m_SizeDelta: {x: 62.15, y: 24.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &61357095

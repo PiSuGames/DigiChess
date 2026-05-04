@@ -146,7 +146,22 @@ public class UIController : MonoBehaviour
                 bonusUI.transform.SetParent(bonusContainer.transform);
                 bonusUI.transform.Find("icon").GetComponent<Image>().sprite = m.Key.icon;
                 bonusUI.transform.Find("name").GetComponent<Text>().text = m.Key.displayName;
-                bonusUI.transform.Find("count").GetComponent<Text>().text = m.Value.ToString() + " / " + m.Key.championBonus.championCount.ToString();
+                // Get next bonus level (the next threshold)
+                ChampionBonus nextBonus = m.Key.championBonuses.Find(b => b.championCount > m.Value);
+
+                Text countText = bonusUI.transform.Find("count").GetComponent<Text>();
+
+                if (nextBonus != null)
+                {
+                    // Show progress toward next level
+                    countText.text = m.Value.ToString() + " / " + nextBonus.championCount.ToString();
+                }
+                else
+                {
+                    // Already at maximum synergy level
+                    countText.text = m.Value.ToString() + " / MAX";
+                }
+
 
                 bonusUI.SetActive(true);
 

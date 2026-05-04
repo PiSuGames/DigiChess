@@ -16,11 +16,11 @@ MonoBehaviour:
   attackProjectile: {fileID: 2047516437370248868, guid: e6736dc1205bf254dbdaa1d89efce89b,
     type: 3}
   uiname: Tapirmon
-  cost: 3
+  cost: 2
   img: {fileID: 21300000, guid: 4211eb10bc958f846976d80b403d4dd3, type: 3}
-  type1: {fileID: 11400000, guid: 1915f27a23cbfea43874f483766cfffb, type: 2}
-  type2: {fileID: 11400000, guid: 3c4644fba6daec0469d795ae15fcc92e, type: 2}
-  health: 850
-  damage: 150
-  attackRange: 8
-  tier: 4
+  type1: {fileID: 11400000, guid: 200e54a10084f3941a1f2a3354741fb1, type: 2}
+  type2: {fileID: 11400000, guid: d085a1949302c0a49be00da5ac2d034b, type: 2}
+  health: 740
+  damage: 60
+  attackRange: 4
+  tier: 1

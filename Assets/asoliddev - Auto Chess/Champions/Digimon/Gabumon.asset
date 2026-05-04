@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b77e70f5edd844bfbf722ca138255, type: 3}
+  m_Name: Gabumon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8687533809271181728, guid: 9bcadc60c1404374b9dc77da29ce9a0c, type: 3}
+  attackProjectile: {fileID: 504887762509234602, guid: e94f8a8182f6ca34bbea07f54c94b04c,
+    type: 3}
+  uiname: Gabumon
+  cost: 2
+  img: {fileID: 0}
+  type1: {fileID: 11400000, guid: 081df077a12ebc242a521196e05a6e49, type: 2}
+  type2: {fileID: 11400000, guid: 60cf05b1bd83bbb4c94ba7bb79a8eb85, type: 2}
+  health: 780
+  damage: 55
+  attackRange: 6
+  tier: 1
