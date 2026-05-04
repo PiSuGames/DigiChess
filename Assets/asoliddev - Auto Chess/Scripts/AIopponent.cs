@@ -162,8 +162,8 @@ public class AIopponent : MonoBehaviour
         //setup chapioncontroller
         championController.Init(champion, ChampionController.TEAMID_AI);
 
-        //set grid position
-        championController.SetGridPosition(Map.GRIDTYPE_HEXA_MAP, indexX, indexZ + 4);
+        //set grid position — offset al lado IA del tablero (mitad superior)
+        championController.SetGridPosition(Map.GRIDTYPE_HEXA_MAP, indexX, indexZ + Map.hexMapSizeZ / 2);
 
         //set position and rotation
         championController.SetWorldPosition();

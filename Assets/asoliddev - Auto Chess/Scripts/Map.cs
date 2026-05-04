@@ -9,8 +9,8 @@ public class Map : MonoBehaviour
     public static int GRIDTYPE_OPONENT_INVENTORY = 1;
     public static int GRIDTYPE_HEXA_MAP = 2;
 
-    public static int hexMapSizeX = 5;
-    public static int hexMapSizeZ = 8;
+    public static int hexMapSizeX = 4;
+    public static int hexMapSizeZ = 6;
     public static int inventorySize = 9;
 
     public Plane m_Plane;

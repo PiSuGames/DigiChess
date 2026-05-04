@@ -11,7 +11,8 @@ public class HealthBar : MonoBehaviour
     private GameObject championGO;
     private ChampionController championController;
     public Image fillImage;
-
+    /// Opcional: barra de mana (asignar en el prefab si se desea)
+    public Image manaFillImage;
     private CanvasGroup canvasGroup;
 
     /// Start is called before the first frame update
@@ -27,6 +28,9 @@ public class HealthBar : MonoBehaviour
         {
             this.transform.position = championGO.transform.position + new Vector3(0, 1.5f + 1.5f * championGO.transform.localScale.x, 0);
             fillImage.fillAmount = championController.currentHealth / championController.maxHealth;
+
+            if (manaFillImage != null && championController.champion != null && championController.champion.maxMana > 0)
+                manaFillImage.fillAmount = championController.currentMana / championController.champion.maxMana;
 
             if (championController.currentHealth <= 0)
                 canvasGroup.alpha = 0;

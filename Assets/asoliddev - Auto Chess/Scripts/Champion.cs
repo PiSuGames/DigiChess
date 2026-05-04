@@ -38,6 +38,20 @@ public class Champion : ScriptableObject
     public float attackRange = 1;
 
     public int tier = 1;
+
+
+    [Header("Habilidad Especial (Mana)")]
+    public DigimonAbilityType abilityType = DigimonAbilityType.None;
+    public string abilityName = "Ataque Especial";
+    /// Daño / curación base de la habilidad
+    public float abilityValue = 50f;
+    /// Mana máximo necesario para lanzar la habilidad
+    public float maxMana = 100f;
+    /// Mana ganado al realizar un ataque
+    public float manaGainPerAttack = 20f;
+    /// Mana ganado al recibir un golpe
+    public float manaGainOnHit = 10f;
+
 }
 
 

@@ -46,7 +46,7 @@ public class ChampionShop : MonoBehaviour
 
 
         //init array
-        availableChampionArray = new Champion[5];
+        availableChampionArray = new Champion[3];
 
         //fill up shop
         for (int i = 0; i < availableChampionArray.Length; i++)

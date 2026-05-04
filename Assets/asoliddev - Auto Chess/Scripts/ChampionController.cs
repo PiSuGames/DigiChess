@@ -68,6 +68,12 @@ public class ChampionController : MonoBehaviour
     public float baseAttackCooldown = 1f;
     private float attackCooldownTimer = 0f;
 
+    // Mana / habilidad especial
+    [HideInInspector] public float currentMana = 0f;
+    private float maxMana;
+    private float manaGainPerAttack;
+    private float manaGainOnHit;
+
     //---------------------------------------------------
 
     void Start() { }
@@ -89,6 +95,8 @@ public class ChampionController : MonoBehaviour
         maxHealth = champion.health;
         currentHealth = champion.health;
         currentDamage = champion.damage;
+
+
 
         worldCanvasController.AddHealthBar(this.gameObject);
         effects = new List<Effect>();
@@ -254,6 +262,7 @@ public class ChampionController : MonoBehaviour
         isInCombat = false;
         target = null;
         isAttacking = false;
+        currentMana = 0f;
 
         SetWorldPosition();
         SetWorldRotation();
@@ -467,6 +476,8 @@ public class ChampionController : MonoBehaviour
         if (bonusLifeSteal > 0)
             ApplyLifeSteal(finalDamage);
 
+        GainManaFromAttack();
+
         if (isTargetDead)
             TryAttackNewTarget();
 
@@ -519,7 +530,7 @@ public class ChampionController : MonoBehaviour
             gamePlayController.OnChampionDeath();
             return true;
         }
-
+        GainManaFromHit();
         return false;
     }
 
@@ -545,6 +556,8 @@ public class ChampionController : MonoBehaviour
             {
                 isDead = true;
                 gameObject.SetActive(false);
+                aIopponent.OnChampionDeath();
+                gamePlayController.OnChampionDeath();
                 yield break;
             }
 
@@ -588,7 +601,10 @@ public class ChampionController : MonoBehaviour
 
     public void GainMana(float amount)
     {
-        bonusManaGain += amount;
+        // Llamado por la sinergia ManaGain - acumula mana real
+        currentMana = Mathf.Min(maxMana, currentMana + amount);
+        if (currentMana >= maxMana)
+            CastAbility();
     }
 
     public void ApplyTaunt(float duration)
@@ -640,5 +656,183 @@ public class ChampionController : MonoBehaviour
     {
         effects.Remove(effect);
         effect.Remove();
+    }
+
+
+    //---------------------------------------------------
+    // MANA Y HABILIDADES ESPECIALES
+    //---------------------------------------------------
+
+    private void GainManaFromAttack()
+    {
+        if (!isInCombat) return;
+        currentMana = Mathf.Min(maxMana, currentMana + manaGainPerAttack);
+        if (currentMana >= maxMana)
+            CastAbility();
+    }
+
+    private void GainManaFromHit()
+    {
+        if (!isInCombat) return;
+        currentMana = Mathf.Min(maxMana, currentMana + manaGainOnHit);
+        if (currentMana >= maxMana)
+            CastAbility();
+    }
+
+    private void CastAbility()
+    {
+        if (champion.abilityType == DigimonAbilityType.None) return;
+        currentMana = 0f;
+
+        switch (champion.abilityType)
+        {
+            case DigimonAbilityType.PepperBreath: CastPepperBreath(); break;
+            case DigimonAbilityType.BlueBlaster: CastBlueBlaster(); break;
+            case DigimonAbilityType.BoomBubble: CastBoomBubble(); break;
+            case DigimonAbilityType.SuperShocker: CastSuperShocker(); break;
+            case DigimonAbilityType.PoisonIvy: CastPoisonIvy(); break;
+            case DigimonAbilityType.MarchingFishes: CastMarchingFishes(); break;
+            case DigimonAbilityType.SpiralTwister: CastSpiralTwister(); break;
+            case DigimonAbilityType.HowlBoost: CastHowlBoost(); break;
+            case DigimonAbilityType.NovaBlast: CastNovaBlast(); break;
+            case DigimonAbilityType.TerraForce: CastTerraForce(); break;
+        }
+    }
+
+    // Devuelve los N enemigos vivos más cercanos
+    private System.Collections.Generic.List<ChampionController> GetNearestEnemies(int maxCount)
+    {
+        GameObject[,] grid = (teamID == TEAMID_PLAYER)
+            ? aIopponent.gridChampionsArray
+            : gamePlayController.gridChampionsArray;
+
+        var candidates = new System.Collections.Generic.List<(ChampionController cc, float dist)>();
+
+        for (int x = 0; x < Map.hexMapSizeX; x++)
+            for (int z = 0; z < Map.hexMapSizeZ / 2; z++)
+            {
+                GameObject go = grid[x, z];
+                if (go == null) continue;
+                ChampionController cc = go.GetComponent<ChampionController>();
+                if (cc.isDead) continue;
+                candidates.Add((cc, Vector3.Distance(transform.position, go.transform.position)));
+            }
+
+        candidates.Sort((a, b) => a.dist.CompareTo(b.dist));
+
+        var result = new System.Collections.Generic.List<ChampionController>();
+        for (int i = 0; i < Mathf.Min(maxCount, candidates.Count); i++)
+            result.Add(candidates[i].cc);
+        return result;
+    }
+
+    // Devuelve los N aliados vivos más cercanos
+    private System.Collections.Generic.List<ChampionController> GetNearestAllies(int maxCount)
+    {
+        GameObject[,] grid = (teamID == TEAMID_PLAYER)
+            ? gamePlayController.gridChampionsArray
+            : aIopponent.gridChampionsArray;
+
+        var candidates = new System.Collections.Generic.List<(ChampionController cc, float dist)>();
+
+        for (int x = 0; x < Map.hexMapSizeX; x++)
+            for (int z = 0; z < Map.hexMapSizeZ / 2; z++)
+            {
+                GameObject go = grid[x, z];
+                if (go == null) continue;
+                ChampionController cc = go.GetComponent<ChampionController>();
+                if (cc.isDead || cc == this) continue;
+                candidates.Add((cc, Vector3.Distance(transform.position, go.transform.position)));
+            }
+
+        candidates.Sort((a, b) => a.dist.CompareTo(b.dist));
+
+        var result = new System.Collections.Generic.List<ChampionController>();
+        for (int i = 0; i < Mathf.Min(maxCount, candidates.Count); i++)
+            result.Add(candidates[i].cc);
+        return result;
+    }
+
+    // Agumon – Pepper Breath: daño de fuego a los 2 enemigos más cercanos
+    private void CastPepperBreath()
+    {
+        foreach (var enemy in GetNearestEnemies(2))
+            enemy.OnGotHit(champion.abilityValue);
+    }
+
+    // Gabumon – Blue Blaster: daño leve + ralentiza a todos los enemigos
+    private void CastBlueBlaster()
+    {
+        foreach (var enemy in GetNearestEnemies(99))
+        {
+            enemy.OnGotHit(champion.abilityValue * 0.4f);
+            enemy.ApplySlow(0.4f, 3f);
+        }
+    }
+
+    // Patamon – Boom Bubble: escudo para todos los aliados
+    private void CastBoomBubble()
+    {
+        GiveShield(champion.abilityValue);
+        foreach (var ally in GetNearestAllies(99))
+            ally.GiveShield(champion.abilityValue);
+    }
+
+    // Tentomon – Super Shocker: aturde al enemigo más cercano
+    private void CastSuperShocker()
+    {
+        var enemies = GetNearestEnemies(1);
+        if (enemies.Count > 0)
+            enemies[0].OnGotStun(2.5f);
+    }
+
+    // Palmon – Poison Ivy: quemadura (DoT) a todos los enemigos
+    private void CastPoisonIvy()
+    {
+        foreach (var enemy in GetNearestEnemies(99))
+            enemy.ApplyBurn(champion.abilityValue / 3f, 3f);
+    }
+
+    // Gomamon – Marching Fishes: cura a todos los aliados
+    private void CastMarchingFishes()
+    {
+        OnGotHeal(champion.abilityValue);
+        foreach (var ally in GetNearestAllies(99))
+            ally.OnGotHeal(champion.abilityValue);
+    }
+
+    // Biyomon – Spiral Twister: daño a los 3 enemigos más cercanos
+    private void CastSpiralTwister()
+    {
+        foreach (var enemy in GetNearestEnemies(3))
+            enemy.OnGotHit(champion.abilityValue * 0.75f);
+    }
+
+    // Garurumon – Howl Boost: aumenta velocidad de ataque propia durante 5s
+    private void CastHowlBoost()
+    {
+        StartCoroutine(HowlBoostCoroutine());
+    }
+
+    IEnumerator HowlBoostCoroutine()
+    {
+        bonusAttackSpeed += 1.0f;
+        yield return new WaitForSeconds(5f);
+        bonusAttackSpeed -= 1.0f;
+    }
+
+    // Greymon – Nova Blast: daño masivo a un único objetivo
+    private void CastNovaBlast()
+    {
+        var enemies = GetNearestEnemies(1);
+        if (enemies.Count > 0)
+            enemies[0].OnGotHit(champion.abilityValue);
+    }
+
+    // WarGreymon – Terra Force: daño masivo a TODOS los enemigos
+    private void CastTerraForce()
+    {
+        foreach (var enemy in GetNearestEnemies(99))
+            enemy.OnGotHit(champion.abilityValue);
     }
 }
